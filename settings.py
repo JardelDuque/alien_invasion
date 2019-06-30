@@ -1,3 +1,4 @@
+"""Módulo que define as configurações principais do jogo."""
 class Settings():
     """Uma classe para armazenar todas as configurações da Invasão Alienígena."""
 

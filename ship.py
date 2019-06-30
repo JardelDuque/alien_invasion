@@ -1,10 +1,14 @@
+"""
+Módulo que define a classe Ship para uma nave espacial em um jogo simples cujo objetivo é derrotar uma frota alienígena.
+"""
 import pygame
 
 class Ship():
+    """Modela a nave espacial do jogador."""
 
     def __init__(self, ai_settings, screen):
         """Inicializa a espaçonave e define sua posição inicial."""
-        
+
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -12,7 +16,7 @@ class Ship():
         self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
-        
+
         # Inicia cada nova espaçonave na parte inferior central da tela
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
@@ -26,7 +30,7 @@ class Ship():
 
     def update(self):
         """Atualiza a posição da espaçonave de acordo com as flags de movimento."""
-        
+
         # Atualiza o valor do centro da espaçonave, e não o retângulo
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.center += self.ai_settings.ship_speed_factor
@@ -38,5 +42,5 @@ class Ship():
 
     def blitme(self):
         """Desenha a espaçonave em sua posição atual."""
-        
+
         self.screen.blit(self.image, self.rect)

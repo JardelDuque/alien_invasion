@@ -1,3 +1,4 @@
+"""Módulo principal de um jogo simples cujo objetivo é derrotar uma frota alienígena."""
 import pygame
 
 from settings import Settings
@@ -5,6 +6,7 @@ from ship import Ship
 import game_functions as gf
 
 def run_game():
+    """Roda o jogo..."""
     # Inicializa o jogo e cria um objeto para a tela
     pygame.init()
     ai_settings = Settings()
@@ -19,5 +21,5 @@ def run_game():
         gf.check_events(ship)
         ship.update()
         gf.update_screen(ai_settings, screen, ship)
-        
+
 run_game()

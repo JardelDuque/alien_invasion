@@ -1,3 +1,4 @@
+"""Módulo de funções de um jogo simples cujo objetivo é derrotar uma frota alienígena."""
 import sys
 import pygame
 
